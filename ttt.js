@@ -16,37 +16,42 @@ window.onload = function(){
       this.innerHTML = turn;
       this.style.background = "lightblue";
       counter++;
+       winningConditions();
     }
     else { (counter % 2 == 1)
       turn = "O";
       this.innerHTML = turn;
       this.style.background = "lightgreen";
       counter++;
+       winningConditions();
     }
     this.removeEventListener("click", add_mark);
-    winningConditions();
   }
 
 
   var winningConditions = function() {
-    if (squares[0].innerHTML == "X" && squares[1].innerHTML == "X" && squares[2].innerHTML == "X" ||
-    square[3].innerHTML == "X" && squares[4].innerHTML == "X" && squares[5].innerHTML == "X" || 
-    squares[6].innerHTML == "X" && squares[7].innerHTML == "X" && squares[8].innerHTML == "X" || 
-    squares[0].innerHTML == "X" && squares[3].innerHTML == "X" && squares[6].innerHTML == "X" || 
-    squares[1].innerHTML == "X" && squares[4].innerHTML == "X" && squares[7].innerHTML == "X" ||
-    squares[2].innerHTML == "X" && squares[5].innerHTML == "X" && squares[8].innerHTML == "X" || 
-    squares[0].innerHTML == "X" && squares[4].innerHTML == "X" && squares[8].innerHTML == "X" || 
-    squares[2].innerHTML == "X" && squares[4].innerHTML == "X" && squares[6].innerHTML == "X")
+    if((squares[0].innerHTML == "X" && squares[1].innerHTML == "X" && squares[2].innerHTML == "X") ||
+    (square[3].innerHTML == "X" && squares[4].innerHTML == "X" && squares[5].innerHTML == "X") || 
+    (squares[6].innerHTML == "X" && squares[7].innerHTML == "X" && squares[8].innerHTML == "X") || 
+    (squares[0].innerHTML == "X" && squares[3].innerHTML == "X" && squares[6].innerHTML == "X") || 
+    (squares[1].innerHTML == "X" && squares[4].innerHTML == "X" && squares[7].innerHTML == "X") ||
+    (squares[2].innerHTML == "X" && squares[5].innerHTML == "X" && squares[8].innerHTML == "X") || 
+    (squares[0].innerHTML == "X" && squares[4].innerHTML == "X" && squares[8].innerHTML == "X") || 
+    (squares[2].innerHTML == "X" && squares[4].innerHTML == "X" && squares[6].innerHTML == "X"))
      {
       alert("X wins!");
       
     }
     
     else if 
-    (squares[0].innerHTML == "O" && squares[1].innerHTML == "O" && squares[2].innerHTML == "O" || squares[3].innerHTML == "O" && squares[4].innerHTML == "O" &&  squares[5].innerHTML == "O" || 
-    squares[6].innerHTML == "O" && squares[7].innerHTML == "O" && squares[8].innerHTML == "O" || squares[0].innerHTML ==  "O" && squares[3].innerHTML == "O" && squares[6].innerHTML == "O" ||
-     squares[1].innerHTML == "O" && squares[4].innerHTML) == "O" && squares[7].innerHTML == "O" || squares[2].innerHTML == "O" && squares[5].innerHTML == "O" &&  squares[8].innerHTML == "O" ||
-     squares[0].innerHTML == "O" && squares[4].innerHTML == "O" &&  squares[8].innerHTML == "O" || squares[2].innerHTML == "O" && squares[4].innerHTML == "O" && squares[6].innerHTML == "O")
+     ((squares[0].innerHTML == "O" && squares[1].innerHTML == "O" && squares[2].innerHTML == "O") || 
+     (squares[3].innerHTML == "O" && squares[4].innerHTML == "O" &&  squares[5].innerHTML == "O") || 
+     (squares[6].innerHTML == "O" && squares[7].innerHTML == "O" && squares[8].innerHTML == "O") || 
+     (squares[0].innerHTML ==  "O" && squares[3].innerHTML == "O" && squares[6].innerHTML == "O") ||
+     (squares[1].innerHTML == "O" && squares[4].innerHTML == "O" && squares[7].innerHTML == "O") ||
+     (squares[2].innerHTML == "O" && squares[5].innerHTML == "O" &&  squares[8].innerHTML == "O") ||
+     (squares[0].innerHTML == "O" && squares[4].innerHTML == "O" &&  squares[8].innerHTML == "O") || 
+     (squares[2].innerHTML == "O" && squares[4].innerHTML == "O" && squares[6].innerHTML == "O"))
      {
        alert("O wins!");
        
