@@ -7,27 +7,26 @@ window.onload = function(){
   
   var turn = "X";
   var counter = 0;
-  
+  var win = false;
 
-  
-  function add_mark(){  
+
+
+  function add_mark(){
     if (counter % 2 == 0){
       turn = "X";
       this.innerHTML = turn;
       this.style.background = "lightblue";
       counter++;
-       winningConditions();
     }
     else { (counter % 2 == 1)
       turn = "O";
       this.innerHTML = turn;
       this.style.background = "lightgreen";
       counter++;
-       winningConditions();
     }
     this.removeEventListener("click", add_mark);
+     winningConditions();
   }
-
 
   var winningConditions = function() {
     if((squares[0].innerHTML == "X" && squares[1].innerHTML == "X" && squares[2].innerHTML == "X") ||
@@ -39,6 +38,8 @@ window.onload = function(){
     (squares[0].innerHTML == "X" && squares[4].innerHTML == "X" && squares[8].innerHTML == "X") || 
     (squares[2].innerHTML == "X" && squares[4].innerHTML == "X" && squares[6].innerHTML == "X"))
      {
+       win = true;
+       click();
       alert("X wins!");
       
     }
@@ -53,18 +54,39 @@ window.onload = function(){
      (squares[0].innerHTML == "O" && squares[4].innerHTML == "O" &&  squares[8].innerHTML == "O") || 
      (squares[2].innerHTML == "O" && squares[4].innerHTML == "O" && squares[6].innerHTML == "O"))
      {
+       win = true;
+       click();
        alert("O wins!");
        
      }
+    
     else {
+      win = true;
+      click();
       alert("Tie game!");
     }
-  };
-
+ 
   
-  for(var i = 0; i < squares.length; i++) {
-    // When you click a square, runs the `add_mark` method.
-    squares[i].addEventListener("click", add_mark);
+  };
+  
+  	var click = function(){
+  	  for(var i = 0; i < squares.length; i++) {
+  	    // When you click a square, runs the `add_mark` method.
+  	  		squares[i].addEventListener("click", add_mark);
+				
+  				if (win === true) {
+  					squares[i].removeEventListener("click", add_mark);
+  				};
+  	  };
+  	};
+
+  	click();
   }
 
-}
+
+   //
+  // for(var i = 0; i < squares.length; i++) {
+  //   // When you click a square, runs the `add_mark` method.
+  //   squares[i].addEventListener("click", add_mark);
+  // }
+
