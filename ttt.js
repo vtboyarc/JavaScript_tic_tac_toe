@@ -82,11 +82,3 @@ window.onload = function(){
 
   	click();
   }
-
-
-   //
-  // for(var i = 0; i < squares.length; i++) {
-  //   // When you click a square, runs the `add_mark` method.
-  //   squares[i].addEventListener("click", add_mark);
-  // }
-
