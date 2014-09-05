@@ -6,30 +6,16 @@
   <title>Tic-Tac-Toe</title>
   <meta name="description" content="">
   
-  <script type="text/javascript" src="ttt.js"></script>
-  
-  <!-- Some basic styles to get your board started. -->
-  <style type="text/css" media="screen">
-    body{
-      text-align: center;
-    }
-    #the_board{
-      margin: 0 auto;
-    }
-    td{
-      font-family: monospace;
-      background: #eeeeee;
-      padding: 20px;
-    }
-    td:hover{
-      background: #cccccc;
-    }
-    </style>
+  <link rel="stylesheet" href="ttt.css" type="text/css" media="screen">
 </head>
 
 <body>
   <h1>Tic-Tac-Toe</h1>
-  <p>Don't you just love this game?</p>
+  
+  <ul id="scores" class="cf">
+    <li>X: <span id="player1">0</span></li>
+    <li>O: <span id="player2">0</span></li>
+  </ul>
   
   <table id="the_board">
     <tr>
@@ -50,6 +36,9 @@
       <td>-</td>
     </tr>
   </table>
+
+  <script type="text/javascript" src="jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="ttt.js"></script>
   
 </body>
 </html>

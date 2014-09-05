@@ -1,1 +1,1 @@
-First attempt at making a simple tic-tac-toe game with JavaScript, HTML, and CSS. It is not working correctly (yet)
+First attempt at making a simple tic-tac-toe game with JavaScript (and some JQUERY), HTML, and CSS. It is not working correctly (yet)

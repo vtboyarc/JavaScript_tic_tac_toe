@@ -3,7 +3,8 @@ window.onload = function(){
    alert("X goes first!");
   
   // Collection of all squares on the board.
-  var squares = document.getElementsByTagName('td');
+  // var squares = document.getElementsByTagName('td'); withut jquery
+  var $squares = $("td"); // with jquery
   
   var turn = "X";
   var counter = 0;
@@ -30,7 +31,7 @@ window.onload = function(){
 
   var winningConditions = function() {
     if((squares[0].innerHTML == "X" && squares[1].innerHTML == "X" && squares[2].innerHTML == "X") ||
-    (square[3].innerHTML == "X" && squares[4].innerHTML == "X" && squares[5].innerHTML == "X") || 
+    (squares[3].innerHTML == "X" && squares[4].innerHTML == "X" && squares[5].innerHTML == "X") || 
     (squares[6].innerHTML == "X" && squares[7].innerHTML == "X" && squares[8].innerHTML == "X") || 
     (squares[0].innerHTML == "X" && squares[3].innerHTML == "X" && squares[6].innerHTML == "X") || 
     (squares[1].innerHTML == "X" && squares[4].innerHTML == "X" && squares[7].innerHTML == "X") ||
@@ -69,16 +70,16 @@ window.onload = function(){
   
   };
   
-  	var click = function(){
-  	  for(var i = 0; i < squares.length; i++) {
-  	    // When you click a square, runs the `add_mark` method.
-  	  		squares[i].addEventListener("click", add_mark);
+  $squares.each(function(i){
+    console.log("Adding click-listener to square number " + i);
+    
+    $(this).on("click", add_mark);
+  });
 				
   				if (win === true) {
   					squares[i].removeEventListener("click", add_mark);
   				};
-  	  };
-  	};
+  	
 
   	click();
   }
